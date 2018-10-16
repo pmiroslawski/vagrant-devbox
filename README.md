@@ -8,6 +8,7 @@ Tools available in the box:
 - mariadb 10.2
 - mongodb 
 - redis
+- memcached
 - git 
 - composer
 - uopz
