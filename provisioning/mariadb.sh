@@ -19,6 +19,8 @@ then
      
      mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql -p$MARIADB_DEFAULT_PASSWD
      
+     cp $CONF_DIR/configs/mysql/my.cnf /etc/mysql/my.cnf
+
      # install mariadb plugin - handlersocket
      installed=`mysql -uroot -p$MARIADB_DEFAULT_PASSWD -e "SET @plugin := (SELECT COUNT(*) as NUM FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME = 'handlersocket' and PLUGIN_STATUS = 'ACTIVE'); SELECT @plugin as res;"`
      expected="res
