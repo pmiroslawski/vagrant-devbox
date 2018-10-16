@@ -59,7 +59,8 @@ Vagrant.configure("2") do |config|
   config.ssh.password = "vagrant"
 
   
-  config.vm.synced_folder "~/Projects/", "/vagrant/", type: "sshfs", sshfs_opts_append: "-o cache=no -o nonempty", mount_options: []
+  #config.vm.synced_folder "~/Projects", "/vagrant/", type: "sshfs", sshfs_opts_append: "-o cache=no -o nonempty", mount_options: []
+  config.vm.synced_folder "~/Projects", "/vagrant", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp'], linux__nfs_options: ['rw', 'no_subtree_check', 'all_squash', 'async']
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the

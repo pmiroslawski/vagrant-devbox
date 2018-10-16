@@ -31,15 +31,3 @@ Tools available in the box:
 
 
 
-### Prerequisites
-
-The Vagrantfile uses sshfs for sync folder. Great implementation of that you can find here:
-https://github.com/dustymabe/vagrant-sshfs
-
-To enable sshfs vagrant-plugin in your env just execute bellow command:
-
-```
-# vagrant plugin install vagrant-sshfs
-```
-
-
