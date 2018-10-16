@@ -57,20 +57,22 @@ Vagrant.configure("2") do |config|
   
   config.ssh.username = "vagrant"
   config.ssh.password = "vagrant"
+
   
-  config.vm.synced_folder "~/Projects/", "/home/vagrant/www", type: "sshfs", sshfs_opts_append: "-o cache=no -o nonempty", mount_options: []
+  config.vm.synced_folder "~/Projects/", "/vagrant/", type: "sshfs", sshfs_opts_append: "-o cache=no -o nonempty", mount_options: []
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
  
   # copy ssh key (ie. for git repositories)
-  # config.vm.provision "file", source: "~/.ssh/fbm-ssh/id_rsa", destination: "~/.ssh/id_rsa"
+  config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
   
   # copy your .gitconfig file
-  # config.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
+  config.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
 
   # run provisioning
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'" 
+  config.vm.provision "file", source: "provisioning/", destination: "/tmp/"
   config.vm.provision :shell, :privileged => true, :path => "provision.sh"
 end

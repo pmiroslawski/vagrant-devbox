@@ -7,22 +7,24 @@ MARIADB_DEFAULT_PASSWD='46f8463e9903fdb04d5c1c11f96ae278'
 apt-get update -y
 apt-get upgrade -y
 
-. /vagrant/provisioning/git.sh
+CONF_DIR='/tmp/provisioning'
 
-. /vagrant/provisioning/apache2.sh
+. $CONF_DIR/git.sh
 
-. /vagrant/provisioning/php.sh
-. /vagrant/provisioning/composer.sh
-. /vagrant/provisioning/php_mongodb.sh
-. /vagrant/provisioning/php_memcached.sh
-. /vagrant/provisioning/php_apcu.sh
-. /vagrant/provisioning/php_uopz.sh
+. $CONF_DIR/apache2.sh
+
+. $CONF_DIR/php.sh
+. $CONF_DIR/composer.sh
+. $CONF_DIR/php_mongodb.sh
+. $CONF_DIR/php_memcached.sh
+. $CONF_DIR/php_apcu.sh
+. $CONF_DIR/php_uopz.sh
 
 /etc/init.d/apache2 restart
 
-. /vagrant/provisioning/phpmd.sh
-. /vagrant/provisioning/redis.sh
-. /vagrant/provisioning/mongodb.sh
-. /vagrant/provisioning/mariadb.sh
+. $CONF_DIR/phpmd.sh
+. $CONF_DIR/redis.sh
+. $CONF_DIR/mongodb.sh
+. $CONF_DIR/mariadb.sh
 
 
