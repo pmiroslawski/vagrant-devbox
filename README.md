@@ -1,4 +1,4 @@
-# Vagarant DEV Box
+# Vagrant DEV Box
 
 Vagrantfile & provisioning script which configure base devbox for php7.2 environment. The box uses debian/sid linux distribution as a base system.
 
