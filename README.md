@@ -21,9 +21,9 @@ Tools available in the box:
 
 2. Run a command:
 
-...,
+```
 # vagrant up
-....
+```
 
 3. Go to make a coffee
 
