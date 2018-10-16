@@ -11,6 +11,7 @@ Tools available in the box:
 - git 
 - composer
 - uopz
+- phpmd
 
 ## Getting Started
 

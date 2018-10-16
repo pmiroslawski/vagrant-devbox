@@ -20,6 +20,7 @@ apt-get upgrade -y
 
 /etc/init.d/apache2 restart
 
+. /vagrant/provisioning/phpmd.sh
 . /vagrant/provisioning/redis.sh
 . /vagrant/provisioning/mongodb.sh
 . /vagrant/provisioning/mariadb.sh
