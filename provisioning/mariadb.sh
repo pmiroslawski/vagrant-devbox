@@ -6,7 +6,7 @@ echo "---------------------------------------"
 
 if [ ! -f /etc/init.d/mysql ]; 
 then
-     apt-get install -y software-properties-common
+     apt-get install -y software-properties-common gnupg2
      apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
      add-apt-repository "deb http://ftp.osuosl.org/pub/mariadb/repo/$MARIADB_VERSION/debian sid main"
      apt-get update 
