@@ -29,5 +29,5 @@ CONF_DIR='/tmp/provisioning'
 . $CONF_DIR/memcached.sh
 . $CONF_DIR/mongodb.sh
 . $CONF_DIR/mariadb.sh
-
+. $CONF_DIR/rabbitmq.sh
 
