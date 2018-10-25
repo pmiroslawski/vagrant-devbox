@@ -14,9 +14,11 @@ CONF_DIR='/tmp/provisioning'
 . $CONF_DIR/apache2.sh
 
 . $CONF_DIR/php.sh
+. $CONF_DIR/php_redis.sh
 . $CONF_DIR/composer.sh
 . $CONF_DIR/php_mongodb.sh
 . $CONF_DIR/php_memcached.sh
+. $CONF_DIR/php_ssh2.sh
 . $CONF_DIR/php_apcu.sh
 . $CONF_DIR/php_uopz.sh
 
