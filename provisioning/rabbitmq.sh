@@ -9,6 +9,7 @@ packages="rabbitmq-server"
 if [ ! -f /etc/init.d/rabbitmq ]; 
 then
   apt-get install -y $packages
+
   rabbitmq-plugins enable rabbitmq_management
   
   rabbitmqctl add_user admin admin
@@ -19,6 +20,5 @@ then
 else
   apt-get install -y  $packages 
 fi
-
 
 /etc/init.d/rabbitmq-server restart

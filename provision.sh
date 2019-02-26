@@ -1,14 +1,13 @@
 #!/bin/bash
     
 PHP='7.2'
-MARIADB_VERSION='10.2'
-MARIADB_DEFAULT_PASSWD='46f8463e9903fdb04d5c1c11f96ae278'
+MARIADB_DEFAULT_PASSWD=''
 
 apt-get update -y
 apt-get upgrade -y
 
 CONF_DIR='/tmp/provisioning'
-
+. $CONF_DIR/system.sh
 . $CONF_DIR/git.sh
 
 . $CONF_DIR/apache2.sh

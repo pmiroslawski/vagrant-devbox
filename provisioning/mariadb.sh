@@ -8,17 +8,18 @@ if [ ! -f /etc/init.d/mysql ];
 then
      apt-get install -y software-properties-common gnupg2
      apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-     add-apt-repository "deb http://ftp.osuosl.org/pub/mariadb/repo/$MARIADB_VERSION/debian sid main"
+     add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.2/ubuntu bionic main'
+    
      apt-get update 
      
      debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_password password $MARIADB_DEFAULT_PASSWD"
      debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_password_again password $MARIADB_DEFAULT_PASSWD"
      
      # -qq implies -y --force-yes
-     apt-get install -qq mariadb-server-$MARIADB_VERSION
+     apt-get install -qq mariadb-server-10.2
      
      mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql -p$MARIADB_DEFAULT_PASSWD
-     
+
      cp $CONF_DIR/configs/mysql/my.cnf /etc/mysql/my.cnf
 
      # install mariadb plugin - handlersocket

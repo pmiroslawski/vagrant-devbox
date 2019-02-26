@@ -9,8 +9,7 @@ then
     echo "UOPZ already installed" 
 else
     cd ~/ && git clone https://github.com/krakjoe/uopz
-    cd uopz && phpize && ./configure
-    make && make install
+    cd uopz && git checkout ef3a622 && phpize && ./configure && make && make install
     cd ~/ && rm uopz -Rf
     echo 'extension=uopz.so' > /etc/php/$PHP/mods-available/uopz.ini
     ln -s /etc/php/$PHP/mods-available/uopz.ini /etc/php/$PHP/cli/conf.d/05-uopz.ini
