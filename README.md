@@ -1,6 +1,6 @@
 # Vagrant DEV Box
 
-Vagrantfile & provisioning script which configure base devbox for php7.2 environment. The box Ubuntu 18.04.2 LTS (Bionic Beaver) linux distribution as a base system.
+Vagrantfile & provisioning script which configure base devbox for php7.2 environment. The box uses Ubuntu 18.04.2 LTS (Bionic Beaver) linux distribution as a base system.
 
 Tools available in the box:
 - apache 2.4
