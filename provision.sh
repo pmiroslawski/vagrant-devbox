@@ -1,6 +1,6 @@
 #!/bin/bash
     
-PHP='7.3'
+PHP='7.4'
 MARIADB_DEFAULT_PASSWD=''
 
 apt-get update -y
@@ -17,7 +17,6 @@ CONF_DIR='/tmp/provisioning'
 . $CONF_DIR/composer.sh
 . $CONF_DIR/php_mongodb.sh
 . $CONF_DIR/php_memcached.sh
-. $CONF_DIR/php_ssh2.sh
 . $CONF_DIR/php_apcu.sh
 . $CONF_DIR/php_uopz.sh
 
@@ -29,4 +28,5 @@ CONF_DIR='/tmp/provisioning'
 . $CONF_DIR/mongodb.sh
 . $CONF_DIR/mariadb.sh
 . $CONF_DIR/rabbitmq.sh
+. $CONF_DIR/elasticsearch.sh
 
