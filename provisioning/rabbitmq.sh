@@ -1,12 +1,12 @@
 #!/bin/bash
 
 echo "---------------------------------------"
-echo "> RABBIT MQ "
+echo "> RABBITMQ "
 echo "---------------------------------------"
 
 packages="rabbitmq-server"
 
-if [ ! -f /etc/init.d/rabbitmq ]; 
+if [ ! -f /etc/init.d/rabbitmq-server ]; 
 then
   apt-get install -y $packages
 
@@ -16,9 +16,9 @@ then
   rabbitmqctl set_user_tags admin administrator
   rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 
-  echo " ... HAS BEEN INSTALLED SUCCESSFULLY!"
+  echo " RABBITMQ HAS BEEN INSTALLED SUCCESSFULLY!"
 else
   apt-get install -y  $packages 
 fi
 
-/etc/init.d/rabbitmq-server restart
+systemctl restart rabbitmq-server
