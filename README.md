@@ -5,7 +5,7 @@ Vagrantfile & provisioning script which configure base devbox for php7.2 environ
 Tools available in the box:
 - apache 2.4
 - php7.4 (with phpdbg, uopz, apcu, memcached, mongodb, redis, ssh2 extensions)
-- mariadb 10.4
+- mariadb 10.3
 - mongodb 
 - redis
 - memcached

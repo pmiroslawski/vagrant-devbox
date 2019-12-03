@@ -1,22 +1,22 @@
 #!/bin/bash
 
 echo "---------------------------------------"
-echo "> MARIA DB 10.4"
+echo "> MARIA DB 10.3"
 echo "---------------------------------------"
 
 if [ ! -f /etc/init.d/mysql ]; 
 then
      apt-get install -y software-properties-common gnupg2
      apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-     add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mariadb.mirror.liquidtelecom.com/repo/10.4/ubuntu bionic main'
+     add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mariadb.mirror.liquidtelecom.com/repo/10.3/ubuntu bionic main'
     
      apt-get update 
      
-     debconf-set-selections <<< "maria-db-10.4 mysql-server/root_password password $MARIADB_DEFAULT_PASSWD"
-     debconf-set-selections <<< "maria-db-10.4 mysql-server/root_password_again password $MARIADB_DEFAULT_PASSWD"
+     debconf-set-selections <<< "mariadb-server-10.3 mysql-server/root_password password $MARIADB_DEFAULT_PASSWD"
+     debconf-set-selections <<< "mariadb-server-10.3 mysql-server/root_password_again password $MARIADB_DEFAULT_PASSWD"
      
      # -qq implies -y --force-yes
-     apt-get install -yqq mariadb-server-10.4
+     apt-get install -qq mariadb-server-10.3
      
      mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql -p$MARIADB_DEFAULT_PASSWD
 
@@ -42,6 +42,6 @@ then
   
   echo " ... MARIADB HAS BEEN INSTALLED SUCCESSFULLY!"
 else
-  apt-get install -y --only-upgrade mariadb-server-10.4
+  apt-get install -y --only-upgrade mariadb-server-10.3
 fi
 

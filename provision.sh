@@ -1,7 +1,7 @@
 #!/bin/bash
     
 PHP='7.4'
-MARIADB_DEFAULT_PASSWD=''
+MARIADB_DEFAULT_PASSWD='pass'
 
 apt-get update -y
 apt-get upgrade -y
