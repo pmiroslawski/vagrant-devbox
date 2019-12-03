@@ -13,7 +13,6 @@ else
     cd ~/ && rm uopz -Rf
     echo 'extension=uopz.so' > /etc/php/$PHP/mods-available/uopz.ini
     ln -s /etc/php/$PHP/mods-available/uopz.ini /etc/php/$PHP/cli/conf.d/05-uopz.ini
-    ln -s /etc/php/$PHP/mods-available/uopz.ini /etc/php/$PHP/apache2/conf.d/05-uopz.ini
     ln -s /etc/php/$PHP/mods-available/uopz.ini /etc/php/$PHP/phpdbg/conf.d/05-uopz.ini
 fi 
 
