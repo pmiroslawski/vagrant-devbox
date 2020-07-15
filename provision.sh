@@ -1,7 +1,7 @@
 #!/bin/bash
     
 PHP='7.4'
-MARIADB_DEFAULT_PASSWD='pass'
+MARIADB_DEFAULT_PASSWD='password'
 
 apt-get update -y
 apt-get upgrade -y
@@ -18,6 +18,7 @@ CONF_DIR='/tmp/provisioning'
 . $CONF_DIR/php_mongodb.sh
 . $CONF_DIR/php_memcached.sh
 . $CONF_DIR/php_apcu.sh
+. $CONF_DIR/php_amqp.sh
 . $CONF_DIR/php_uopz.sh
 
 /etc/init.d/apache2 restart

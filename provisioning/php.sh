@@ -9,10 +9,6 @@ packages="libapache2-mod-php$PHP php$PHP-bcmath php$PHP php$PHP-cli php$PHP-comm
 
 if [ ! -f /usr/bin/php ]; 
 then
-  apt install software-properties-common -y
-  add-apt-repository ppa:ondrej/php
-  apt update
-
   apt-get install -y $packages
   
   echo " PHP $PHP HAS BEEN INSTALLED SUCCESSFULLY!"

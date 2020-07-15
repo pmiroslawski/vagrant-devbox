@@ -12,10 +12,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  #config.vm.box = "pmiroslawski/ubuntu-18.04"
-  #config.vm.box_url = "file:///home/relaxant/vagrant/devbox-dvip2/package.box"
-  config.vm.box = "peru/ubuntu-18.04-server-amd64"
-  config.vm.box_version = "20191202.01"
+  config.vm.box = "pmiroslawski/debian-sid"
+  #config.vm.box_url = "file://"
+  config.vm.box_version = "20200715.0"
  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
