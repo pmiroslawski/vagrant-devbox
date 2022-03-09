@@ -12,9 +12,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "pmiroslawski/debian-sid"
-  #config.vm.box_url = "file://"
-  config.vm.box_version = "20200715.0"
+  config.vm.box = "peru/ubuntu-18.04-server-amd64"
+  config.vm.box_version = "20220302.01"
  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -46,13 +45,13 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+     vb.memory = "6144"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
