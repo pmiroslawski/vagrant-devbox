@@ -18,7 +18,7 @@ CONF_DIR='/tmp/provisioning'
 . $CONF_DIR/php_mongodb.sh
 . $CONF_DIR/php_memcached.sh
 . $CONF_DIR/php_apcu.sh
-. $CONF_DIR/php_amqp.sh
+#. $CONF_DIR/php_amqp.sh
 . $CONF_DIR/php_uopz.sh
 
 /etc/init.d/apache2 restart
