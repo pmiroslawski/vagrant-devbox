@@ -1,6 +1,6 @@
 #!/bin/bash
     
-PHP='7.4'
+PHP='8.1'
 MARIADB_DEFAULT_PASSWD='password'
 
 apt-get update -y
